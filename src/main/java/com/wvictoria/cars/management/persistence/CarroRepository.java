@@ -21,4 +21,9 @@ public class CarroRepository {
     public Carro save(Carro carro) {
         return carroCrudRepository.save(carro);
     }
+
+    public void delete(int idCarro) {
+        carroCrudRepository.deleteById(idCarro);
+    }
+
 }
