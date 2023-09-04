@@ -17,4 +17,8 @@ public class CarroRepository {
     public Optional<Carro> getCarro(int idCarro) {
         return  carroCrudRepository.findById(idCarro);
     }
+
+    public Carro save(Carro carro) {
+        return carroCrudRepository.save(carro);
+    }
 }
