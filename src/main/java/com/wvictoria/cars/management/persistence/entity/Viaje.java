@@ -31,4 +31,8 @@ public class Viaje {
     @ManyToOne
     @JoinColumn(name = "id_empleado", insertable = false, updatable = false)
     private Empleado empleado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_carro", insertable = false, updatable = false)
+    private Carro carro;
 }

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "carros")
@@ -22,4 +23,7 @@ public class Carro {
 
     @Column(name = "fecha_fabricacion")
     private LocalDateTime fechaFabricacion;
+
+    @OneToMany(mappedBy = "carro")
+    private List<Viaje> viajes;
 }
