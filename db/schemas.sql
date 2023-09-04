@@ -1,4 +1,13 @@
 -- -----------------------------------------------------
+-- Tabla "USUARIOS"
+-- -----------------------------------------------------
+CREATE TABLE USUARIOS (
+  "id_usuario" SERIAL NOT NULL,
+  "username" VARCHAR(10) NOT NULL,
+  "password" VARCHAR NOT NULL,
+  PRIMARY KEY ("id_usuario"));
+
+-- -----------------------------------------------------
 -- Tabla "EMPLEADOS"
 -- -----------------------------------------------------
 CREATE TABLE EMPLEADOS (
