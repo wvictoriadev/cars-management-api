@@ -7,24 +7,16 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "viajes")
+@Table(name = "empleados")
 @Getter
 @Setter
-public class Viaje {
+public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_viaje")
-    private Integer idViaje;
-
     @Column(name = "id_empleado")
     private Integer idEmpleado;
 
-    @Column(name = "id_carro")
-    private Integer idCarro;
+    private String nombre;
 
-    @Column(name = "fecha_retiro")
-    private LocalDateTime fechaRetiro;
-
-    @Column(name = "fecha_entrega")
-    private LocalDateTime fechaEntrega;
+    private String matricula;
 }
