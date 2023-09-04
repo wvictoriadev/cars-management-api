@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "empleados")
@@ -19,4 +20,7 @@ public class Empleado {
     private String nombre;
 
     private String matricula;
+
+    @OneToMany(mappedBy = "empleado")
+    private List<Viaje> viajes;
 }

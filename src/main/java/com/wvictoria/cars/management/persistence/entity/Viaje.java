@@ -27,4 +27,8 @@ public class Viaje {
 
     @Column(name = "fecha_entrega")
     private LocalDateTime fechaEntrega;
+
+    @ManyToOne
+    @JoinColumn(name = "id_empleado", insertable = false, updatable = false)
+    private Empleado empleado;
 }
