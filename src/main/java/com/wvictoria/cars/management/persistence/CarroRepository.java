@@ -3,10 +3,12 @@ package com.wvictoria.cars.management.persistence;
 import com.wvictoria.cars.management.persistence.crud.CarroCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Carro;
 import com.wvictoria.cars.management.persistence.entity.Empleado;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class CarroRepository {
     private CarroCrudRepository carroCrudRepository;
 

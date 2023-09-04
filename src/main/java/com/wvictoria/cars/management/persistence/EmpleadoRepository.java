@@ -2,10 +2,12 @@ package com.wvictoria.cars.management.persistence;
 
 import com.wvictoria.cars.management.persistence.crud.EmpleadoCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Empleado;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class EmpleadoRepository {
     private EmpleadoCrudRepository empleadoCrudRepository;
 
