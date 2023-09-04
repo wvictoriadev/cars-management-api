@@ -17,6 +17,8 @@ public interface TripMapper {
             @Mapping(source="idCarro", target = "carId"),
             @Mapping(source="empleado", target = "employee"),
             @Mapping(source="carro", target = "car"),
+            @Mapping(source="fechaRetiro", target = "endDate"),
+            @Mapping(source="fechaEntrega", target = "deliverDate")
     })
     Trip toTrip(Viaje viaje);
     List<Trip> toTrips(List<Viaje> viajes);
