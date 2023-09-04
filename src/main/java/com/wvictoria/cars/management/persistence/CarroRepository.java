@@ -27,5 +27,4 @@ public class CarroRepository {
     public void delete(int idCarro) {
         carroCrudRepository.deleteById(idCarro);
     }
-
 }

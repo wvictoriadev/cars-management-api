@@ -21,10 +21,6 @@ public class TripService {
         return tripRepository.getTrip(tripId);
     }
 
-    public Optional<List<Trip>> getByEmployee(int employeeId) {
-        return tripRepository.getByEmployee(employeeId);
-    }
-
     public Trip save(Trip trip) {
         return tripRepository.save(trip);
     }

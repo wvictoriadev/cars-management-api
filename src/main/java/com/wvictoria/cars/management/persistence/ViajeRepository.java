@@ -23,17 +23,6 @@ public class ViajeRepository implements TripRepository {
     }
 
     @Override
-    public Optional<List<Trip>> getByEmployee(int employeeId) {
-        List<Viaje> viajes = viajeCrudRepository.findByIdEmpleadoOrderByNombreAsc(employeeId);
-        return Optional.of(tripMapper.toTrips(viajes));
-    }
-
-    @Override
-    public Optional<List<Trip>> getByCar(int carId) {
-        return Optional.empty();
-    }
-
-    @Override
     public Optional<Trip> getTrip(int tripId) {
         return viajeCrudRepository.findById(tripId).map(viaje -> tripMapper.toTrip((viaje)));
     }
