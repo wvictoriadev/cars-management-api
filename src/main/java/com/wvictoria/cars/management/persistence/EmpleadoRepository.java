@@ -1,29 +1,41 @@
 package com.wvictoria.cars.management.persistence;
 
+import com.wvictoria.cars.management.domain.Employee;
+import com.wvictoria.cars.management.domain.repository.EmployeeRepository;
 import com.wvictoria.cars.management.persistence.crud.EmpleadoCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Empleado;
+import com.wvictoria.cars.management.persistence.mapper.EmployeeMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class EmpleadoRepository {
+public class EmpleadoRepository implements EmployeeRepository {
+    @Autowired
     private EmpleadoCrudRepository empleadoCrudRepository;
+    @Autowired
+    private EmployeeMapper employeeMapper;
 
-    public List<Empleado> getAll() {
-        return (List<Empleado>) empleadoCrudRepository.findAll();
+    public List<Employee> getAll() {
+        List<Empleado> empleados = (List<Empleado>) empleadoCrudRepository.findAll();
+        return employeeMapper.toEmployees(empleados);
     }
 
-    public Optional<Empleado> getEmpleado(int idEmpleado) {
-        return  empleadoCrudRepository.findById(idEmpleado);
+    @Override
+    public Optional<Employee> getEmployee(int employeeId) {
+        return empleadoCrudRepository.findById(employeeId).map(empleado -> employeeMapper.toEmployee(empleado));
     }
 
-    public Empleado save(Empleado empleado) {
-        return empleadoCrudRepository.save(empleado);
+    @Override
+    public Employee save(Employee employee) {
+        Empleado empleado = employeeMapper.toEmpleado(employee);
+        return employeeMapper.toEmployee(empleadoCrudRepository.save(empleado));
     }
 
-    public void delete(int idEmpleado) {
-        empleadoCrudRepository.deleteById(idEmpleado);
+    @Override
+    public void delete(int employeeId) {
+        empleadoCrudRepository.deleteById(employeeId);
     }
 }
