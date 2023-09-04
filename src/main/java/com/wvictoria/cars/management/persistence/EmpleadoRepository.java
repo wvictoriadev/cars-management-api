@@ -16,4 +16,8 @@ public class EmpleadoRepository {
     public Optional<Empleado> getEmpleado(int idEmpleado) {
         return  empleadoCrudRepository.findById(idEmpleado);
     }
+
+    public Empleado save(Empleado empleado) {
+        return empleadoCrudRepository.save(empleado);
+    }
 }
