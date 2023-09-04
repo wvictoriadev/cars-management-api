@@ -20,4 +20,8 @@ public class EmpleadoRepository {
     public Empleado save(Empleado empleado) {
         return empleadoCrudRepository.save(empleado);
     }
+
+    public void delete(int idEmpleado) {
+        empleadoCrudRepository.deleteById(idEmpleado);
+    }
 }
