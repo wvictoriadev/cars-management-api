@@ -1,30 +1,41 @@
 package com.wvictoria.cars.management.persistence;
 
+import com.wvictoria.cars.management.domain.Car;
+import com.wvictoria.cars.management.domain.repository.CarRepository;
 import com.wvictoria.cars.management.persistence.crud.CarroCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Carro;
-import com.wvictoria.cars.management.persistence.entity.Empleado;
+import com.wvictoria.cars.management.persistence.mapper.CarMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class CarroRepository {
+public class CarroRepository implements CarRepository {
+    @Autowired
     private CarroCrudRepository carroCrudRepository;
+    @Autowired
+    private CarMapper carMapper;
 
-    public List<Carro> getAll() {
-        return (List<Carro>) carroCrudRepository.findAll();
+    public List<Car> getAll() {
+        List<Carro> carros = (List<Carro>) carroCrudRepository.findAll();
+        return carMapper.toCars(carros);
     }
 
-    public Optional<Carro> getCarro(int idCarro) {
-        return  carroCrudRepository.findById(idCarro);
+    @Override
+    public Optional<Car> getCar(int carId) {
+        return carroCrudRepository.findById(carId).map(carro -> carMapper.toCar(carro));
     }
 
-    public Carro save(Carro carro) {
-        return carroCrudRepository.save(carro);
+    @Override
+    public Car save(Car car) {
+        Carro carro = carMapper.toCarro(car);
+        return carMapper.toCar(carroCrudRepository.save(carro));
     }
 
-    public void delete(int idCarro) {
-        carroCrudRepository.deleteById(idCarro);
+    @Override
+    public void delete(int carroId) {
+        carroCrudRepository.deleteById(carroId);
     }
 }
