@@ -2,6 +2,7 @@ package com.wvictoria.cars.management.web.controller;
 
 import com.wvictoria.cars.management.domain.Car;
 import com.wvictoria.cars.management.domain.service.CarService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/cars")
+@RequiredArgsConstructor
 public class CarController {
     @Autowired
     private CarService carService;
