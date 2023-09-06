@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.security;
 
-import com.wvictoria.cars.management.domain.repository.UserRepository;
+import com.wvictoria.cars.management.domain.repository.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {
-    private final UserRepository userRepository;
+    private final IUserRepository userRepository;
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {

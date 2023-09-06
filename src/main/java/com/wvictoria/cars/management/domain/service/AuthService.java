@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.domain.service;
 
-import com.wvictoria.cars.management.domain.repository.UserRepository;
+import com.wvictoria.cars.management.domain.repository.IUserRepository;
 import com.wvictoria.cars.management.persistence.entity.Usuario;
 import com.wvictoria.cars.management.persistence.entity.enums.Rol;
 import com.wvictoria.cars.management.web.controller.*;
@@ -11,12 +11,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Locale;
-
 @Service
 @RequiredArgsConstructor
 public class AuthService {
-    private final UserRepository userRepository;
+    private final IUserRepository userRepository;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
