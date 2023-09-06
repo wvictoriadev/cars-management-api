@@ -12,7 +12,7 @@ public class Trip {
     private int employeeId;
     private int carId;
     private Employee employee;
-    private Car car;
+    private CarDto car;
     private LocalDateTime endDate;
     private LocalDateTime deliverDate;
 }

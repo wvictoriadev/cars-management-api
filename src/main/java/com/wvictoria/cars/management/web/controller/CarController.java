@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.web.controller;
 
-import com.wvictoria.cars.management.domain.dto.Car;
+import com.wvictoria.cars.management.domain.dto.CarDto;
 import com.wvictoria.cars.management.domain.service.AuthService;
 import com.wvictoria.cars.management.domain.service.CarService;
 import lombok.RequiredArgsConstructor;
@@ -22,17 +22,17 @@ public class CarController {
     private AuthService authService;
 
     @GetMapping("/all")
-    public List<Car> getAll() {
+    public List<CarDto> getAll() {
         return carService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Car> getCar(@PathVariable("id") int carId) {
+    public Optional<CarDto> getCar(@PathVariable("id") int carId) {
         return carService.getCar(carId);
     }
 
     @PostMapping("/save")
-    public Car save(@RequestBody Car car) {
+    public CarDto save(@RequestBody CarDto car) {
         return carService.save(car);
     }
 

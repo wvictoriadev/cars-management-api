@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class Car {
+public class CarDto {
     private int carId;
     private String reference;
     private String brand;

@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence.mapper;
 
-import com.wvictoria.cars.management.domain.dto.Car;
+import com.wvictoria.cars.management.domain.dto.CarDto;
 import com.wvictoria.cars.management.persistence.entity.Carro;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -17,10 +17,10 @@ public interface CarMapper {
             @Mapping(source="marca", target = "brand"),
             @Mapping(source="fechaFabricacion", target = "fabricationDate"),
     })
-    Car toCar(Carro carro);
-    List<Car> toCars(List<Carro> carros);
+    CarDto toCar(Carro carro);
+    List<CarDto> toCars(List<Carro> carros);
 
     @InheritInverseConfiguration
     @Mapping(target = "viajes", ignore = true)
-    Carro toCarro(Car car);
+    Carro toCarro(CarDto car);
 }

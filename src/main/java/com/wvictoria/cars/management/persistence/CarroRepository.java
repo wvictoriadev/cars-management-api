@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence;
 
-import com.wvictoria.cars.management.domain.dto.Car;
+import com.wvictoria.cars.management.domain.dto.CarDto;
 import com.wvictoria.cars.management.domain.repository.CarRepository;
 import com.wvictoria.cars.management.persistence.crud.CarroCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Carro;
@@ -18,18 +18,18 @@ public class CarroRepository implements CarRepository {
     @Autowired
     private CarMapper carMapper;
 
-    public List<Car> getAll() {
+    public List<CarDto> getAll() {
         List<Carro> carros = (List<Carro>) carroCrudRepository.findAll();
         return carMapper.toCars(carros);
     }
 
     @Override
-    public Optional<Car> getCar(int carId) {
+    public Optional<CarDto> getCar(int carId) {
         return carroCrudRepository.findById(carId).map(carro -> carMapper.toCar(carro));
     }
 
     @Override
-    public Car save(Car car) {
+    public CarDto save(CarDto car) {
         Carro carro = carMapper.toCarro(car);
         return carMapper.toCar(carroCrudRepository.save(carro));
     }
