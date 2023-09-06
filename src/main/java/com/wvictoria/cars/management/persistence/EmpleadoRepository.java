@@ -1,7 +1,7 @@
 package com.wvictoria.cars.management.persistence;
 
 import com.wvictoria.cars.management.domain.dto.EmployeeDto;
-import com.wvictoria.cars.management.domain.repository.EmployeeRepository;
+import com.wvictoria.cars.management.domain.repository.IEmployeeRepository;
 import com.wvictoria.cars.management.persistence.crud.EmpleadoCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Empleado;
 import com.wvictoria.cars.management.persistence.mapper.EmployeeMapper;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class EmpleadoRepository implements EmployeeRepository {
+public class EmpleadoRepository implements IEmployeeRepository {
     @Autowired
     private EmpleadoCrudRepository empleadoCrudRepository;
     @Autowired
