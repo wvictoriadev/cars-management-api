@@ -23,6 +23,9 @@ public class Usuario implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
     private Integer idUsuario;
+    @Column(unique = true)
+    private String email;
+    @Column(unique = true)
     private String username;
     private String password;
     private Rol rol;

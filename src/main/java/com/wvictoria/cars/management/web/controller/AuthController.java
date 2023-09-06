@@ -1,13 +1,14 @@
 package com.wvictoria.cars.management.web.controller;
 
 import com.wvictoria.cars.management.domain.service.AuthService;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class AuthController {
     private final AuthService authService;
 
@@ -18,6 +19,7 @@ public class AuthController {
 
     @PostMapping(value = "register")
     public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
-        return ResponseEntity.ok(authService.register(request));
+        return new ResponseEntity<>(authService.register(request), HttpStatus.CREATED);
+        //return ResponseEntity.ok(authService.register(request));
     }
 }

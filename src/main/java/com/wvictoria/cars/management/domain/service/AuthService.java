@@ -11,6 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -31,16 +33,30 @@ public class AuthService {
     }
 
     public AuthResponse register(RegisterRequest request) {
+        String token = null;
+        boolean validToken = false;
+        String username = null;
+
+        Optional<Usuario> optionalUser = userRepository.findByUsername(request.getUsername());
+
+        if(!optionalUser.isPresent()){
         Usuario usuario = Usuario.builder()
+                .email((request.getEmail()))
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .rol(Rol.EMPLEADO)
                 .build();
 
         userRepository.save(usuario);
+        token = jwtService.getToken(usuario);
+        validToken = true;
+        username = usuario.getUsername();
+        }
 
         return AuthResponse.builder()
-                .token(jwtService.getToken(usuario))
+                .token(token)
+                .valid(validToken)
+                .username(username)
                 .build();
     }
 }
