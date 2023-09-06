@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence.mapper;
 
-import com.wvictoria.cars.management.domain.Trip;
+import com.wvictoria.cars.management.domain.dto.Trip;
 import com.wvictoria.cars.management.persistence.entity.Viaje;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

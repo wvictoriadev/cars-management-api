@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.web.controller;
 
-import com.wvictoria.cars.management.domain.Trip;
+import com.wvictoria.cars.management.domain.dto.Trip;
 import com.wvictoria.cars.management.domain.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

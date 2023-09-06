@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence.mapper;
 
-import com.wvictoria.cars.management.domain.Employee;
+import com.wvictoria.cars.management.domain.dto.Employee;
 import com.wvictoria.cars.management.persistence.entity.Empleado;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

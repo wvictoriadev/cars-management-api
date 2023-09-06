@@ -1,4 +1,4 @@
-package com.wvictoria.cars.management.domain;
+package com.wvictoria.cars.management.domain.dto;
 
 import lombok.Getter;
 import lombok.Setter;

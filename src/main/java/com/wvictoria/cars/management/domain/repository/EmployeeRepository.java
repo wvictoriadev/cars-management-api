@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.domain.repository;
 
-import com.wvictoria.cars.management.domain.Employee;
+import com.wvictoria.cars.management.domain.dto.Employee;
 
 import java.util.List;
 import java.util.Optional;

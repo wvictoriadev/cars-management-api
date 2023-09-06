@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence;
 
-import com.wvictoria.cars.management.domain.Trip;
+import com.wvictoria.cars.management.domain.dto.Trip;
 import com.wvictoria.cars.management.domain.repository.TripRepository;
 import com.wvictoria.cars.management.persistence.crud.ViajeCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Viaje;

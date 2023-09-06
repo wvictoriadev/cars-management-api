@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence;
 
-import com.wvictoria.cars.management.domain.Employee;
+import com.wvictoria.cars.management.domain.dto.Employee;
 import com.wvictoria.cars.management.domain.repository.EmployeeRepository;
 import com.wvictoria.cars.management.persistence.crud.EmpleadoCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Empleado;

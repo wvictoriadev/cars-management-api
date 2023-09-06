@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.domain.service;
 
-import com.wvictoria.cars.management.domain.Employee;
+import com.wvictoria.cars.management.domain.dto.Employee;
 import com.wvictoria.cars.management.domain.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

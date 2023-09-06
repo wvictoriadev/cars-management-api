@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.domain.service;
 
-import com.wvictoria.cars.management.domain.Trip;
+import com.wvictoria.cars.management.domain.dto.Trip;
 import com.wvictoria.cars.management.domain.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.web.controller;
 
-import com.wvictoria.cars.management.domain.Car;
+import com.wvictoria.cars.management.domain.dto.Car;
 import com.wvictoria.cars.management.domain.service.AuthService;
 import com.wvictoria.cars.management.domain.service.CarService;
 import lombok.RequiredArgsConstructor;
