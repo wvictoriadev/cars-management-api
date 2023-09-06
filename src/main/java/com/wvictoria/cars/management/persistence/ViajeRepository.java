@@ -37,4 +37,14 @@ public class ViajeRepository implements TripRepository {
     public void delete(int tripId) {
         viajeCrudRepository.deleteById(tripId);
     }
+
+    @Override
+    public void updateEndDateTrip(int tripId, String endDate) {
+
+    }
+
+    @Override
+    public void updateDeliverDateTrip(int tripId, String deliverDate) {
+
+    }
 }

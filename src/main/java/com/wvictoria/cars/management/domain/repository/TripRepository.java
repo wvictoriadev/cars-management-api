@@ -10,4 +10,6 @@ public interface TripRepository {
     Optional<Trip> getTrip(int tripId);
     Trip save(Trip trip);
     void delete(int tripId);
+    void updateEndDateTrip(int tripId, String endDate);
+    void updateDeliverDateTrip(int tripId, String deliverDate);
 }
