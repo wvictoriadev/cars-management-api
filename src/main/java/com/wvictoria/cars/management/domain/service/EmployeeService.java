@@ -14,20 +14,20 @@ public class EmployeeService {
     private IEmployeeRepository employeeRepository;
 
     public List<EmployeeDto> getAll() {
-        return employeeRepository.getAll();
+        return employeeRepository.getAllEmployees();
     }
 
     public Optional<EmployeeDto> getEmployee(int employeeId) {
-        return employeeRepository.getEmployee(employeeId);
+        return employeeRepository.getEmployeeById(employeeId);
     }
 
     public EmployeeDto save(EmployeeDto employee) {
-        return employeeRepository.save(employee);
+        return employeeRepository.createEmployee(employee);
     }
 
     public boolean delete(int employeeId) {
         return getEmployee(employeeId).map(employee -> {
-            employeeRepository.delete(employeeId);
+            employeeRepository.deleteEmployee(employeeId);
             return true;
         }).orElse(false);
     }

@@ -18,24 +18,24 @@ public class EmpleadoRepository implements IEmployeeRepository {
     @Autowired
     private EmployeeMapper employeeMapper;
 
-    public List<EmployeeDto> getAll() {
+    public List<EmployeeDto> getAllEmployees() {
         List<Empleado> empleados = (List<Empleado>) empleadoCrudRepository.findAll();
         return employeeMapper.toEmployees(empleados);
     }
 
     @Override
-    public Optional<EmployeeDto> getEmployee(int employeeId) {
+    public Optional<EmployeeDto> getEmployeeById(int employeeId) {
         return empleadoCrudRepository.findById(employeeId).map(empleado -> employeeMapper.toEmployee(empleado));
     }
 
     @Override
-    public EmployeeDto save(EmployeeDto employee) {
+    public EmployeeDto createEmployee(EmployeeDto employee) {
         Empleado empleado = employeeMapper.toEmpleado(employee);
         return employeeMapper.toEmployee(empleadoCrudRepository.save(empleado));
     }
 
     @Override
-    public void delete(int employeeId) {
+    public void deleteEmployee(int employeeId) {
         empleadoCrudRepository.deleteById(employeeId);
     }
 }

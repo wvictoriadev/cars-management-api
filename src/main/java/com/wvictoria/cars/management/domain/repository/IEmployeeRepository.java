@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IEmployeeRepository {
-    List<EmployeeDto> getAll();
-    Optional<EmployeeDto> getEmployee(int employeeId);
-    EmployeeDto save(EmployeeDto employee);
-    void delete(int employeeId);
+    List<EmployeeDto> getAllEmployees();
+    Optional<EmployeeDto> getEmployeeById(int employeeId);
+    EmployeeDto createEmployee(EmployeeDto employee);
+    void deleteEmployee(int employeeId);
 }
