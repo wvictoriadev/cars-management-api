@@ -5,7 +5,7 @@ import com.wvictoria.cars.management.domain.dto.TripDto;
 import java.util.List;
 import java.util.Optional;
 
-public interface TripRepository {
+public interface ITripRepository {
     List<TripDto> getAll();
     Optional<TripDto> getTrip(int tripId);
     TripDto save(TripDto trip);

@@ -1,7 +1,7 @@
 package com.wvictoria.cars.management.persistence;
 
 import com.wvictoria.cars.management.domain.dto.TripDto;
-import com.wvictoria.cars.management.domain.repository.TripRepository;
+import com.wvictoria.cars.management.domain.repository.ITripRepository;
 import com.wvictoria.cars.management.persistence.crud.ViajeCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Viaje;
 import com.wvictoria.cars.management.persistence.mapper.TripMapper;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ViajeRepository implements TripRepository {
+public class ViajeRepository implements ITripRepository {
     @Autowired
     private ViajeCrudRepository viajeCrudRepository;
     @Autowired
