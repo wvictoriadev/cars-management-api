@@ -10,7 +10,7 @@ import org.mapstruct.Mappings;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface CarMapper {
+public interface ICarMapper {
     @Mappings({
             @Mapping(source="idCarro", target = "carId"),
             @Mapping(source="modelo", target = "reference"),

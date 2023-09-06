@@ -4,7 +4,7 @@ import com.wvictoria.cars.management.domain.dto.TripDto;
 import com.wvictoria.cars.management.domain.repository.ITripRepository;
 import com.wvictoria.cars.management.persistence.crud.ViajeCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Viaje;
-import com.wvictoria.cars.management.persistence.mapper.TripMapper;
+import com.wvictoria.cars.management.persistence.mapper.ITripMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +16,7 @@ public class ViajeRepository implements ITripRepository {
     @Autowired
     private ViajeCrudRepository viajeCrudRepository;
     @Autowired
-    private TripMapper tripMapper;
+    private ITripMapper tripMapper;
     public List<TripDto> getAllTrips() {
         List<Viaje> viajes = (List<Viaje>) viajeCrudRepository.findAll();
         return tripMapper.toTrips(viajes);

@@ -4,7 +4,7 @@ import com.wvictoria.cars.management.domain.dto.EmployeeDto;
 import com.wvictoria.cars.management.domain.repository.IEmployeeRepository;
 import com.wvictoria.cars.management.persistence.crud.EmpleadoCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Empleado;
-import com.wvictoria.cars.management.persistence.mapper.EmployeeMapper;
+import com.wvictoria.cars.management.persistence.mapper.IEmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +16,7 @@ public class EmpleadoRepository implements IEmployeeRepository {
     @Autowired
     private EmpleadoCrudRepository empleadoCrudRepository;
     @Autowired
-    private EmployeeMapper employeeMapper;
+    private IEmployeeMapper employeeMapper;
 
     public List<EmployeeDto> getAllEmployees() {
         List<Empleado> empleados = (List<Empleado>) empleadoCrudRepository.findAll();

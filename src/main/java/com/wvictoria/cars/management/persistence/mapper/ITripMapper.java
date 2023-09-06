@@ -9,8 +9,8 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {EmployeeMapper.class, CarMapper.class})
-public interface TripMapper {
+@Mapper(componentModel = "spring", uses = {IEmployeeMapper.class, ICarMapper.class})
+public interface ITripMapper {
     @Mappings({
             @Mapping(source="idViaje", target = "tripId"),
             @Mapping(source="idEmpleado", target = "employeeId"),
