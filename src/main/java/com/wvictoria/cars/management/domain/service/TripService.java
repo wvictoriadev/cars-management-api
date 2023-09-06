@@ -14,20 +14,20 @@ public class TripService {
     private ITripRepository tripRepository;
 
     public List<TripDto> getAll() {
-        return tripRepository.getAll();
+        return tripRepository.getAllTrips();
     }
 
     public Optional<TripDto> getTrip(int tripId) {
-        return tripRepository.getTrip(tripId);
+        return tripRepository.getTripById(tripId);
     }
 
     public TripDto save(TripDto trip) {
-        return tripRepository.save(trip);
+        return tripRepository.createTrip(trip);
     }
 
     public boolean delete(int tripId) {
         return getTrip(tripId).map(trip -> {
-            tripRepository.delete(tripId);
+            tripRepository.deleteTrip(tripId);
             return true;
         }).orElse(false);
     }

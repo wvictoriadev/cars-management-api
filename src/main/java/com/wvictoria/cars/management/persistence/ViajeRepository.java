@@ -17,24 +17,24 @@ public class ViajeRepository implements ITripRepository {
     private ViajeCrudRepository viajeCrudRepository;
     @Autowired
     private TripMapper tripMapper;
-    public List<TripDto> getAll() {
+    public List<TripDto> getAllTrips() {
         List<Viaje> viajes = (List<Viaje>) viajeCrudRepository.findAll();
         return tripMapper.toTrips(viajes);
     }
 
     @Override
-    public Optional<TripDto> getTrip(int tripId) {
+    public Optional<TripDto> getTripById(int tripId) {
         return viajeCrudRepository.findById(tripId).map(viaje -> tripMapper.toTrip((viaje)));
     }
 
     @Override
-    public TripDto save(TripDto trip) {
+    public TripDto createTrip(TripDto trip) {
         Viaje viaje = tripMapper.toViaje(trip);
         return tripMapper.toTrip(viajeCrudRepository.save(viaje));
     }
 
     @Override
-    public void delete(int tripId) {
+    public void deleteTrip(int tripId) {
         viajeCrudRepository.deleteById(tripId);
     }
 
