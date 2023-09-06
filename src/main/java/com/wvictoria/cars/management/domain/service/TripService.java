@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.domain.service;
 
-import com.wvictoria.cars.management.domain.dto.Trip;
+import com.wvictoria.cars.management.domain.dto.TripDto;
 import com.wvictoria.cars.management.domain.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,15 +13,15 @@ public class TripService {
     @Autowired
     private TripRepository tripRepository;
 
-    public List<Trip> getAll() {
+    public List<TripDto> getAll() {
         return tripRepository.getAll();
     }
 
-    public Optional<Trip> getTrip(int tripId) {
+    public Optional<TripDto> getTrip(int tripId) {
         return tripRepository.getTrip(tripId);
     }
 
-    public Trip save(Trip trip) {
+    public TripDto save(TripDto trip) {
         return tripRepository.save(trip);
     }
 

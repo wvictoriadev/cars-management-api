@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class Trip {
+public class TripDto {
     private int tripId;
     private int employeeId;
     private int carId;

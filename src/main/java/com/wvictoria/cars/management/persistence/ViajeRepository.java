@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence;
 
-import com.wvictoria.cars.management.domain.dto.Trip;
+import com.wvictoria.cars.management.domain.dto.TripDto;
 import com.wvictoria.cars.management.domain.repository.TripRepository;
 import com.wvictoria.cars.management.persistence.crud.ViajeCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Viaje;
@@ -17,18 +17,18 @@ public class ViajeRepository implements TripRepository {
     private ViajeCrudRepository viajeCrudRepository;
     @Autowired
     private TripMapper tripMapper;
-    public List<Trip> getAll() {
+    public List<TripDto> getAll() {
         List<Viaje> viajes = (List<Viaje>) viajeCrudRepository.findAll();
         return tripMapper.toTrips(viajes);
     }
 
     @Override
-    public Optional<Trip> getTrip(int tripId) {
+    public Optional<TripDto> getTrip(int tripId) {
         return viajeCrudRepository.findById(tripId).map(viaje -> tripMapper.toTrip((viaje)));
     }
 
     @Override
-    public Trip save(Trip trip) {
+    public TripDto save(TripDto trip) {
         Viaje viaje = tripMapper.toViaje(trip);
         return tripMapper.toTrip(viajeCrudRepository.save(viaje));
     }

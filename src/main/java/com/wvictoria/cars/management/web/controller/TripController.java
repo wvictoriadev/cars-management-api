@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.web.controller;
 
-import com.wvictoria.cars.management.domain.dto.Trip;
+import com.wvictoria.cars.management.domain.dto.TripDto;
 import com.wvictoria.cars.management.domain.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,17 +17,17 @@ public class TripController {
     private TripService tripService;
 
     @GetMapping("/all")
-    public List<Trip> getAll() {
+    public List<TripDto> getAll() {
         return tripService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Trip> getTrip(@PathVariable("id") int tripId) {
+    public Optional<TripDto> getTrip(@PathVariable("id") int tripId) {
         return tripService.getTrip(tripId);
     }
 
     @PostMapping("/save")
-    public Trip save(@RequestBody Trip trip) {
+    public TripDto save(@RequestBody TripDto trip) {
         return tripService.save(trip);
     }
 

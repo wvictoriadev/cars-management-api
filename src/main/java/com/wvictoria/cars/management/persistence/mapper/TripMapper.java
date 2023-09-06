@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence.mapper;
 
-import com.wvictoria.cars.management.domain.dto.Trip;
+import com.wvictoria.cars.management.domain.dto.TripDto;
 import com.wvictoria.cars.management.persistence.entity.Viaje;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -20,9 +20,9 @@ public interface TripMapper {
             @Mapping(source="fechaRetiro", target = "endDate"),
             @Mapping(source="fechaEntrega", target = "deliverDate")
     })
-    Trip toTrip(Viaje viaje);
-    List<Trip> toTrips(List<Viaje> viajes);
+    TripDto toTrip(Viaje viaje);
+    List<TripDto> toTrips(List<Viaje> viajes);
 
     @InheritInverseConfiguration
-    Viaje toViaje(Trip trip);
+    Viaje toViaje(TripDto trip);
 }
