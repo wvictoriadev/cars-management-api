@@ -5,7 +5,7 @@ import com.wvictoria.cars.management.domain.dto.CarDto;
 import java.util.List;
 import java.util.Optional;
 
-public interface CarRepository {
+public interface ICarRepository {
     List<CarDto> getAll();
     Optional<CarDto> getCar(int carId);
     CarDto save(CarDto car);

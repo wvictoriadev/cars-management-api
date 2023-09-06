@@ -1,7 +1,7 @@
 package com.wvictoria.cars.management.persistence;
 
 import com.wvictoria.cars.management.domain.dto.CarDto;
-import com.wvictoria.cars.management.domain.repository.CarRepository;
+import com.wvictoria.cars.management.domain.repository.ICarRepository;
 import com.wvictoria.cars.management.persistence.crud.CarroCrudRepository;
 import com.wvictoria.cars.management.persistence.entity.Carro;
 import com.wvictoria.cars.management.persistence.mapper.CarMapper;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class CarroRepository implements CarRepository {
+public class CarroRepository implements ICarRepository {
     @Autowired
     private CarroCrudRepository carroCrudRepository;
     @Autowired

@@ -1,7 +1,7 @@
 package com.wvictoria.cars.management.domain.service;
 
 import com.wvictoria.cars.management.domain.dto.CarDto;
-import com.wvictoria.cars.management.domain.repository.CarRepository;
+import com.wvictoria.cars.management.domain.repository.ICarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class CarService {
     @Autowired
-    private CarRepository carRepository;
+    private ICarRepository carRepository;
 
     public List<CarDto> getAll() {
         return carRepository.getAll();
