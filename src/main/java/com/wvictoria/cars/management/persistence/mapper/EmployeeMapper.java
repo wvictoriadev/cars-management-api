@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.persistence.mapper;
 
-import com.wvictoria.cars.management.domain.dto.Employee;
+import com.wvictoria.cars.management.domain.dto.EmployeeDto;
 import com.wvictoria.cars.management.persistence.entity.Empleado;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -16,10 +16,10 @@ public interface EmployeeMapper {
             @Mapping(source="nombre", target = "name"),
             @Mapping(source="matricula", target = "registration")
     })
-    Employee toEmployee(Empleado empleado);
-    List<Employee> toEmployees(List<Empleado> empleados);
+    EmployeeDto toEmployee(Empleado empleado);
+    List<EmployeeDto> toEmployees(List<Empleado> empleados);
 
     @InheritInverseConfiguration
     @Mapping(target = "viajes", ignore = true)
-    Empleado toEmpleado(Employee employee);
+    Empleado toEmpleado(EmployeeDto employee);
 }

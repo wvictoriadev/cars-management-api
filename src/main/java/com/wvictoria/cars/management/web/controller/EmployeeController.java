@@ -1,6 +1,6 @@
 package com.wvictoria.cars.management.web.controller;
 
-import com.wvictoria.cars.management.domain.dto.Employee;
+import com.wvictoria.cars.management.domain.dto.EmployeeDto;
 import com.wvictoria.cars.management.domain.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,17 +17,17 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping("/all")
-    public List<Employee> getAll() {
+    public List<EmployeeDto> getAll() {
         return employeeService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Employee> getEmployee(@PathVariable("id") int employeeId) {
+    public Optional<EmployeeDto> getEmployee(@PathVariable("id") int employeeId) {
         return employeeService.getEmployee(employeeId);
     }
 
     @PostMapping("/save")
-    public Employee save(@RequestBody Employee employee) {
+    public EmployeeDto save(@RequestBody EmployeeDto employee) {
         return employeeService.save(employee);
     }
 
