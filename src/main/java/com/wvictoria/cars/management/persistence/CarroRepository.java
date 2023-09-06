@@ -18,24 +18,24 @@ public class CarroRepository implements ICarRepository {
     @Autowired
     private CarMapper carMapper;
 
-    public List<CarDto> getAll() {
+    public List<CarDto> getAllCars() {
         List<Carro> carros = (List<Carro>) carroCrudRepository.findAll();
         return carMapper.toCars(carros);
     }
 
     @Override
-    public Optional<CarDto> getCar(int carId) {
+    public Optional<CarDto> getCarById(int carId) {
         return carroCrudRepository.findById(carId).map(carro -> carMapper.toCar(carro));
     }
 
     @Override
-    public CarDto save(CarDto car) {
+    public CarDto createCar(CarDto car) {
         Carro carro = carMapper.toCarro(car);
         return carMapper.toCar(carroCrudRepository.save(carro));
     }
 
     @Override
-    public void delete(int carroId) {
+    public void deleteCar(int carroId) {
         carroCrudRepository.deleteById(carroId);
     }
 }

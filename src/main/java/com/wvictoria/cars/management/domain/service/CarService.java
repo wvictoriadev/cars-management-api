@@ -14,20 +14,20 @@ public class CarService {
     private ICarRepository carRepository;
 
     public List<CarDto> getAll() {
-        return carRepository.getAll();
+        return carRepository.getAllCars();
     }
 
     public Optional<CarDto> getCar(int carId) {
-        return carRepository.getCar(carId);
+        return carRepository.getCarById(carId);
     }
 
     public CarDto save(CarDto car) {
-        return carRepository.save(car);
+        return carRepository.createCar(car);
     }
 
     public boolean delete(int carId) {
         return getCar(carId).map(car -> {
-            carRepository.delete(carId);
+            carRepository.deleteCar(carId);
             return true;
         }).orElse(false);
     }
