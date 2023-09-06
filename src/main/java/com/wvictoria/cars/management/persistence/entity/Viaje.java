@@ -28,11 +28,11 @@ public class Viaje {
     @Column(name = "fecha_entrega")
     private LocalDateTime fechaEntrega;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "id_empleado", insertable = false, updatable = false)
     private Empleado empleado;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "id_carro", insertable = false, updatable = false)
     private Carro carro;
 }

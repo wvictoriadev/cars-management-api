@@ -24,6 +24,6 @@ public class Carro {
     @Column(name = "fecha_fabricacion")
     private LocalDateTime fechaFabricacion;
 
-    @OneToMany(mappedBy = "carro")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "carro")
     private List<Viaje> viajes;
 }

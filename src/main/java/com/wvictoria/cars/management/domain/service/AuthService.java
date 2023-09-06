@@ -3,15 +3,15 @@ package com.wvictoria.cars.management.domain.service;
 import com.wvictoria.cars.management.domain.repository.UserRepository;
 import com.wvictoria.cars.management.persistence.entity.Usuario;
 import com.wvictoria.cars.management.persistence.entity.enums.Rol;
-import com.wvictoria.cars.management.web.controller.AuthResponse;
-import com.wvictoria.cars.management.web.controller.LoginRequest;
-import com.wvictoria.cars.management.web.controller.RegisterRequest;
+import com.wvictoria.cars.management.web.controller.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Locale;
 
 @Service
 @RequiredArgsConstructor
@@ -24,8 +24,11 @@ public class AuthService {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
         UserDetails user = userRepository.findByUsername(request.getUsername()).orElseThrow();
         String token = jwtService.getToken(user);
+        boolean validToken = jwtService.isTokenValid(token, user);
         return AuthResponse.builder()
                 .token(token)
+                .username(user.getUsername())
+                .valid(validToken)
                 .build();
     }
 
