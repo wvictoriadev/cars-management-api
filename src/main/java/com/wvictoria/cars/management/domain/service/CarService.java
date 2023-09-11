@@ -1,9 +1,7 @@
 package com.wvictoria.cars.management.domain.service;
 
-import com.wvictoria.cars.management.domain.Car;
-import com.wvictoria.cars.management.domain.Employee;
-import com.wvictoria.cars.management.domain.repository.CarRepository;
-import com.wvictoria.cars.management.domain.repository.EmployeeRepository;
+import com.wvictoria.cars.management.domain.dto.CarDto;
+import com.wvictoria.cars.management.domain.repository.ICarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,23 +11,23 @@ import java.util.Optional;
 @Service
 public class CarService {
     @Autowired
-    private CarRepository carRepository;
+    private ICarRepository carRepository;
 
-    public List<Car> getAll() {
-        return carRepository.getAll();
+    public List<CarDto> getAll() {
+        return carRepository.getAllCars();
     }
 
-    public Optional<Car> getCar(int carId) {
-        return carRepository.getCar(carId);
+    public Optional<CarDto> getCar(int carId) {
+        return carRepository.getCarById(carId);
     }
 
-    public Car save(Car car) {
-        return carRepository.save(car);
+    public CarDto save(CarDto car) {
+        return carRepository.createCar(car);
     }
 
     public boolean delete(int carId) {
         return getCar(carId).map(car -> {
-            carRepository.delete(carId);
+            carRepository.deleteCar(carId);
             return true;
         }).orElse(false);
     }

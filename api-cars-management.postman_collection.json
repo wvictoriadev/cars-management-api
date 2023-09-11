@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "18a48308-7637-4765-b72d-726d9eb522b3",
+		"name": "api-cars-management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Viajes",
+			"item": [
+				{
+					"name": "getAllTrips",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjUiLCJpYXQiOjE2OTQwMjA4OTMsImV4cCI6MTY5NDAyMjMzM30.2TKpdr-OLmEtYFfcbSE64f0qficPPxaCU5p8Hz5GzsI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/trips/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"trips",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTripById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/trips/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"trips",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTrip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kZXNhbCIsImlhdCI6MTY5Mzk3NDg0MCwiZXhwIjoxNjkzOTc2MjgwfQ.cw5zV0vlEf8daokta7hBihcU4EBRHipaKNm3tQ_rvOs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeId\": 5,\r\n    \"carId\": 8,\r\n    \"endDate\": \"2023-09-04T18:00:00\",\r\n    \"deliverDate\": \"2023-09-04T21:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/trips/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"trips",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empleados",
+			"item": [
+				{
+					"name": "getAllEmployees",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kZXNhbCIsImlhdCI6MTY5Mzk3MzM1OCwiZXhwIjoxNjkzOTc0Nzk4fQ.q7STzdkHm0ojOXdf9vCSyaVrq_mCD1rGpC1GGIgOYCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/employees/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"employees",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEmployeeById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJvdmlzYSIsImlhdCI6MTY5Mzg1ODczOCwiZXhwIjoxNjkzODYwMTc4fQ.YvBSS62T3X_Y800Ydsm0uCXBcuFwylJA58Etu2LbfkM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/employees/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kZXNhbCIsImlhdCI6MTY5Mzk3Mzk1NCwiZXhwIjoxNjkzOTc1Mzk0fQ.Oanjlp8zjjVRFIxKcLu01VOLkiIU88BXn0HH93uid24",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/employees/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"employees",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJvdmlzYSIsImlhdCI6MTY5Mzg1ODczOCwiZXhwIjoxNjkzODYwMTc4fQ.YvBSS62T3X_Y800Ydsm0uCXBcuFwylJA58Etu2LbfkM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Daniela Alejandra Vergara Mendoza\",\r\n    \"registration\": \"ZHA789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/employees/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"employees",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carros",
+			"item": [
+				{
+					"name": "getAllCars",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kZXNhbCIsImlhdCI6MTY5NDAxMjEyOSwiZXhwIjoxNjk0MDEzNTY5fQ.JFd9bbc6PtMsMnAYY4rSgauNVRsFNsr5DCf1J96mvL4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/cars/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"cars",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{token}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"2023\",\r\n    \"brand\": \"Toyota Prado TXL\",\r\n    \"fabricationDate\": \"2023-06-01T14:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/cars/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"cars",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCarById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kZXNhbCIsImlhdCI6MTY5Mzk3MDA3MSwiZXhwIjoxNjkzOTcxNTExfQ.1yDXeSAOIHTy0Z0GZke3Ci2eElKoj6fi76DKK8Ibcts",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/cars/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"cars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kZXNhbCIsImlhdCI6MTY5Mzk3MTA1NywiZXhwIjoxNjkzOTcyNDk3fQ.fVIzlzTpMFuEt-_vfINmwFm83hmeGnDWa1aI_dhSDWM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/cars/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"cars",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"fleetmg@!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"harovisa@mail.com\",\r\n    \"username\": \"harovisa\",\r\n    \"password\": \"fleetmg@!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cars-management/api/v1/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cars-management",
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

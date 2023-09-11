@@ -3,8 +3,10 @@
 -- -----------------------------------------------------
 CREATE TABLE USUARIOS (
   "id_usuario" SERIAL NOT NULL,
+  "email" VARCHAR(100) NOT NULL,
   "username" VARCHAR(10) NOT NULL,
   "password" VARCHAR NOT NULL,
+  "rol" VARCHAR NOT NULL,
   PRIMARY KEY ("id_usuario"));
 
 -- -----------------------------------------------------

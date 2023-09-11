@@ -20,6 +20,6 @@ public class Empleado {
 
     private String matricula;
 
-    @OneToMany(mappedBy = "empleado")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "empleado")
     private List<Viaje> viajes;
 }
