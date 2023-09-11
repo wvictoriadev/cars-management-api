@@ -10,4 +10,16 @@ public class CarsManagementApplication {
 		SpringApplication.run(CarsManagementApplication.class, args);
 	}
 
+<<<<<<< Updated upstream
+=======
+/*	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/cars-management/api/v1/").allowedOrigins("http://localhost:4200");
+			}
+		};
+	}*/
+>>>>>>> Stashed changes
 }
